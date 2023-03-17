@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+  app:
+    # build: .
+    image: <image uri>/backend-app:latest
+    restart: always
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/userdata
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: admin123456
+      SPRING_JPA_HIBERNATE_DDL_AUTO: create
+      SPRING_JPA_PROPERTIES_DIALECT: org.hibernate.dialect.MySQL8Dialect
+      SERVER_PORT: 8080      
+    ports:
+      - '8080:8080'
+    expose:
+      - '8080'
