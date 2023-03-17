@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  react-app:
+    build:
+      context: .
+      args:
+        REACT_APP_BACKEND_BASE_URL: http://app-lb-1500276605.us-east-1.elb.amazonaws.com
+    restart: always    
+    # environment:
+    #   REACT_APP_BACKEND_BASE_URL: http://app-lb-1500276605.us-east-1.elb.amazonaws.com
+    ports:
+      - '80:80'
+    expose:
+      - '80'
